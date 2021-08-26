@@ -75,16 +75,25 @@ public class AddressBook {
 
     }
 
+    public static void searchBook() {
+        Scanner search = new Scanner (System.in);
+        System.out.println("Select Address by ID to Delete");
+        search.next();
+    }
+
     public static void DeleteById(){
         Scanner name = new Scanner (System.in);
         System.out.println("Select Address by ID to Delete");
         String id = name.next();
 
+        // delete entry from json file by the id
+
 
         System.out.println("Deleting:" + id);
         System.out.println("");
-
     }
+
+
 
     public static void DeleteAll() {
         JSONArray blankList = new JSONArray();

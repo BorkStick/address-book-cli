@@ -35,6 +35,7 @@ public class MainMenu {
                 break;
             case 3:
                 System.out.println("3) Search for a specific entry");
+                AddressBook.searchBook();
                 break;
             case 4:
                 System.out.println("4) Print Address Book");
