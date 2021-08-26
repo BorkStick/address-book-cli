@@ -30,7 +30,7 @@ public class MainMenu {
                 break;
             case 2:
                 System.out.println("2) Remove an entry");
-                WriteJSONExample.main();
+                AddressBook.ReadFromFile();
                 break;
             case 3:
                 System.out.println("3) Search for a specific entry");
@@ -42,12 +42,17 @@ public class MainMenu {
                 break;
             case 5:
                 System.out.println("5) Delete Book");
+                AddressBook.DeleteAll();
                 break;
             case 6:
                 System.out.println("6) Quit");
                 System.exit(0);
                 break;
-
+            case 0:
+                System.out.println("0) Secret Menu");
+                WriteJSONExample.main();
+                AddressBook.ReadFromFile();
+                break;
         }
     }
 

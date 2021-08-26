@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -66,6 +67,18 @@ public class AddressBook {
 
     public static void AddToBook(String x) {
 
+    }
+
+    public static void DeleteAll() {
+        JSONArray blankList = new JSONArray();
+        try (FileWriter file = new FileWriter("addressbook.json")) {
+            //We can write any JSONArray or JSONObject instance to the file
+            file.write(blankList.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

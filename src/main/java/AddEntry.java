@@ -1,15 +1,21 @@
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 
+
 public class AddEntry {
+
+    private static final AtomicInteger count = new AtomicInteger(0);
 
     public static void setEntry() {
         Scanner name = new Scanner (System.in);
 
+        int id;
         String firstName;
         String lastName;
         String phoneNumber;
@@ -23,11 +29,13 @@ public class AddEntry {
         phoneNumber = name.next();
         System.out.println("Enter your email:");
         emailAddress = name.next();
+        id = count.incrementAndGet();
 
         System.out.println("");
         System.out.println("");
         System.out.println("Added New Entry");
         System.out.println("================================");
+        System.out.printf("ID: %o \n", id);
         System.out.printf("First Name: %s \n", firstName);
         System.out.printf("Last Name: %s \n", lastName);
         System.out.printf("Phone Number: %s \n", phoneNumber);
@@ -35,6 +43,7 @@ public class AddEntry {
         System.out.println("================================");
 
         JSONObject addressDetails = new JSONObject();
+        addressDetails.put("id", id);
         addressDetails.put("firstName", firstName);
         addressDetails.put("lastName", lastName);
         addressDetails.put("phone", phoneNumber);
