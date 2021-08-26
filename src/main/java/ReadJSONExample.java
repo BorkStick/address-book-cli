@@ -1,20 +1,17 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class AddressBook {
-    public static void main() {
-        System.out.println("");
-        System.out.println("");
-        System.out.println("List Address");
-
-    }
-
-    public static void ReadFromFile(){
+public class ReadJSONExample
+{
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args)
+    {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
 
@@ -23,11 +20,11 @@ public class AddressBook {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
 
-            JSONArray addressList = (JSONArray) obj;
-            System.out.println(addressList);
+            JSONArray employeeList = (JSONArray) obj;
+            System.out.println(employeeList);
 
             //Iterate over employee array
-            addressList.forEach( add -> parseAddressObject( (JSONObject) add ) );
+            employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -38,34 +35,28 @@ public class AddressBook {
         }
     }
 
-    private static void parseAddressObject(JSONObject address)
+    private static void parseEmployeeObject(JSONObject employee)
     {
-        //Get address object within list
-        JSONObject addressObject = (JSONObject) address.get("address");
+        //Get employee object within list
+        JSONObject employeeObject = (JSONObject) employee.get("address");
 
         System.out.println("====================================");
-        //Get address first name
-        String firstName = (String) addressObject.get("firstName");
+        //Get employee first name
+        String firstName = (String) employeeObject.get("firstName");
         System.out.println("First Name: " + firstName);
 
-        //Get address last name
-        String lastName = (String) addressObject.get("lastName");
+        //Get employee last name
+        String lastName = (String) employeeObject.get("lastName");
         System.out.println("Last Name: " + lastName);
 
         //Get employee website name
-        String phone = (String) addressObject.get("phone");
+        String phone = (String) employeeObject.get("phone");
         System.out.println("Phone: " + phone);
 
         //Get employee website name
-        String email = (String) addressObject.get("email");
+        String email = (String) employeeObject.get("email");
         System.out.println("Email: " + email);
 
         System.out.println("====================================");
     }
-
-
-    public static void AddToBook(String x) {
-
-    }
-
 }

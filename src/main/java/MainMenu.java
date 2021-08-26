@@ -30,6 +30,7 @@ public class MainMenu {
                 break;
             case 2:
                 System.out.println("2) Remove an entry");
+                WriteJSONExample.main();
                 break;
             case 3:
                 System.out.println("3) Search for a specific entry");
