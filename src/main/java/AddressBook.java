@@ -2,6 +2,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -45,6 +47,10 @@ public class AddressBook {
         JSONObject addressObject = (JSONObject) address.get("address");
 
         System.out.println("====================================");
+      //Get address id
+        String id = (String) addressObject.get("id");
+        System.out.println("ID: " + id);
+
         //Get address first name
         String firstName = (String) addressObject.get("firstName");
         System.out.println("First Name: " + firstName);
@@ -66,6 +72,17 @@ public class AddressBook {
 
 
     public static void AddToBook(String x) {
+
+    }
+
+    public static void DeleteById(){
+        Scanner name = new Scanner (System.in);
+        System.out.println("Select Address by ID to Delete");
+        String id = name.next();
+
+
+        System.out.println("Deleting:" + id);
+        System.out.println("");
 
     }
 

@@ -15,7 +15,7 @@ public class WriteJSONExample
     {
         //First address
         JSONObject addressDetails = new JSONObject();
-        addressDetails.put("id", 1);
+        addressDetails.put("id", "1");
         addressDetails.put("firstName", "tylor");
         addressDetails.put("lastName", "wurz");
         addressDetails.put("phone", "123");
@@ -26,7 +26,7 @@ public class WriteJSONExample
 
         //Second address
         JSONObject addressDetails2 = new JSONObject();
-        addressDetails2.put("id", 2);
+        addressDetails2.put("id", "2");
         addressDetails2.put("firstName", "terry");
         addressDetails2.put("lastName", "fromit");
         addressDetails2.put("phone", "234");
@@ -37,7 +37,7 @@ public class WriteJSONExample
 
         //Second address
         JSONObject addressDetails3 = new JSONObject();
-        addressDetails3.put("id", 3);
+        addressDetails3.put("id", "3");
         addressDetails3.put("firstName", "steve");
         addressDetails3.put("lastName", "sellit");
         addressDetails3.put("phone", "435");
