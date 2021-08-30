@@ -7,7 +7,7 @@ public class MainMenu {
 
     }
 
-    public static void StartMenu() {
+    public static void StartMenu() throws Exception {
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("1) Add an entry");

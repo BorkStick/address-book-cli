@@ -15,7 +15,7 @@ public class ReadJSONExample
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("addressbook.json"))
+        try (FileReader reader = new FileReader("employees.json"))
         {
             //Read JSON file
             Object obj = jsonParser.parse(reader);
@@ -37,26 +37,21 @@ public class ReadJSONExample
 
     private static void parseEmployeeObject(JSONObject employee)
     {
+        System.out.println("====================================");
         //Get employee object within list
         JSONObject employeeObject = (JSONObject) employee.get("address");
 
-        System.out.println("====================================");
         //Get employee first name
         String firstName = (String) employeeObject.get("firstName");
-        System.out.println("First Name: " + firstName);
+        System.out.println(firstName);
 
         //Get employee last name
         String lastName = (String) employeeObject.get("lastName");
-        System.out.println("Last Name: " + lastName);
+        System.out.println(lastName);
 
         //Get employee website name
-        String phone = (String) employeeObject.get("phone");
-        System.out.println("Phone: " + phone);
-
-        //Get employee website name
-        String email = (String) employeeObject.get("email");
-        System.out.println("Email: " + email);
-
+        String website = (String) employeeObject.get("phone");
+        System.out.println(website);
         System.out.println("====================================");
     }
 }

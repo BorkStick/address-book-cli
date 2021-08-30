@@ -2,12 +2,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class AddressBook {
     public static void main() {
@@ -75,10 +78,22 @@ public class AddressBook {
 
     }
 
-    public static void searchBook() {
+    public static void searchBook() throws Exception{
+
+        // get user input
         Scanner search = new Scanner (System.in);
-        System.out.println("Select Address by ID to Delete");
+        System.out.println("Search for address");
         search.next();
+        System.out.printf("Displaying all entrys that match: %s", search);
+
+
+        String jsonString = "{\"Id\":101, \"firstName\":\"tylor\", \"lastName\":\"wurz\"}, {\"Id\":102, \"firstName\":\"steve\", \"lastName\":\"fromit\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.readValue(jsonString, ObjectNode.class);
+        if(node.has("firstName")) {
+            System.out.println("NAME: " + node.get("firstName"));
+
+        }
     }
 
     public static void DeleteById(){
