@@ -16,6 +16,7 @@
   - [ ] print address list
   - [x] get user input
     - [x] ask what address to remove
+    - [ ] use first name
   - [ ] get address json
   - [ ] look for user input in json file
   - [ ] remove from json file
@@ -23,6 +24,7 @@
 - [ ] search address
     - [x] get user input
       - [x] ask what to search
+      - [ ] use first name
     - [ ] get address json
     - [ ] filter list by user input
 - [x] list all addresses
@@ -30,5 +32,6 @@
     - [x] print json addresses
 
 - [x] delete everything
+  - [x] ask for confirmation
     - [x] clear the array in the json file
 - [x] quit

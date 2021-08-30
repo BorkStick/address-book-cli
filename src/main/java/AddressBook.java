@@ -108,18 +108,30 @@ public class AddressBook {
         System.out.println("");
     }
 
-
+    static Scanner scan = new Scanner(System.in);
 
     public static void DeleteAll() {
-        JSONArray blankList = new JSONArray();
-        try (FileWriter file = new FileWriter("addressbook.json")) {
-            //We can write any JSONArray or JSONObject instance to the file
-            file.write(blankList.toJSONString());
-            file.flush();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        System.out.println("DELETE ALL ADDRESSES?\ny|n");
+        String response = scan.next();
+
+        if(response.equals("y")) {
+            JSONArray blankList = new JSONArray();
+            try (FileWriter file = new FileWriter("addressbook.json")) {
+                //We can write any JSONArray or JSONObject instance to the file
+                file.write(blankList.toJSONString());
+                file.flush();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Canceled");
+
         }
+
+
+
     }
 
 }

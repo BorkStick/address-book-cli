@@ -43,7 +43,11 @@ public class MainMenu {
                 AddressBook.ReadFromFile();
                 break;
             case 5:
-                System.out.println("5) Delete Book");
+                System.out.println("5) Delete Address Book");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("WARNING");
+                System.out.println("THIS WILL DELETE EVERYTHING");
                 AddressBook.DeleteAll();
                 break;
             case 6:
