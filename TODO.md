@@ -1,16 +1,25 @@
 # TODO
-- [ ] add address
+- [x] add address
   - [x] get user input
+    - [ ] generate id
+    - [x] ask first name
+    - [x] ask last name
+    - [x] ask phone 
+    - [x] ask email
   - [ ] get current address json
   - [ ] create new Object
+  - [x] write address to json file
   - [ ] append newAddressObject to the existing json
-  
+  - [x] print new address 
 
 - [ ] remove address
-  - [ ] get user input
+  - [ ] print address list
+  - [x] get user input
+    - [x] ask what address to remove
   - [ ] get address json
   - [ ] look for user input in json file
   - [ ] remove from json file
+  - [x] print deletion confirmation
 - [ ] search address
     - [ ] get user input
     - [ ] get address json
