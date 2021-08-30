@@ -6,3 +6,5 @@ A java CLI address book that allows the user to:
 - list all addresses
 - delete everything
 - quit
+
+[TODO](TODO.md)

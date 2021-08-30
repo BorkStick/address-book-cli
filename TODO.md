@@ -21,7 +21,8 @@
   - [ ] remove from json file
   - [x] print deletion confirmation
 - [ ] search address
-    - [ ] get user input
+    - [x] get user input
+      - [x] ask what to search
     - [ ] get address json
     - [ ] filter list by user input
 - [x] list all addresses
